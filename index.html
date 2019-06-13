@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>'Good Movie' Neural Network </title>
+  
+      <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+
+  <div id='container'>
+<form id='form'>
+  <table>
+    <tr>
+      <td>Rotten Tomatoes Critic Score:</td>
+      <td><input type="range" id="rt-critic-score" min="0" max="100"></td>
+      <td><span id="critic"></span></td>
+    </tr>
+    <tr>
+      <td>Rotten Tomatoes Audience Score:</td>
+      <td><input type="range" id="rt-audience-score" min="0" max="100"></td>
+      <td><span id="audience"></span></td>
+    </tr>
+      <td>IMDb:</td>
+      <td><input type="range" id="imdb-score" min="1.0" max="9.9" step="0.1"></td>
+      <td><span id="imdb"></span></td>
+    </tr>
+  </table>
+</form>
+
+<table id='adjusted-score-table'>
+  <tr><td>Average Score RT:</td><td><span id='average-score-rt'></span></td></tr>
+  <tr><td>Average Score All:</td><td><span id='average-score-all'></span></td></tr>
+  <tr><td>Adjusted Score:</td><td><span id='output'></span></td></tr>
+  <tr><td>Rating:</td><td><span id='rating'></span></td></tr>
+  <tr><td>Output:</td><td><span id='o-result'></span></td></tr>
+</table>
+</div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/synaptic/1.1.4/synaptic.min.js'></script>
+
+	<script  src="js/training-data.js"></script>
+	<script  src="js/script.js"></script>
+
+</body>
+
+</html>
