@@ -1,0 +1,20 @@
+table {
+  font-size: 1.5em;
+  margin: auto;
+  padding: 1% 0;
+  display: inline-block;
+}
+#title {
+	text-align: center;
+}
+#form, #adjusted-score-table {
+  /*display: inline-block;*/
+}
+
+#form {
+  margin-right: 4%;
+}
+#container {
+  width: 60%;
+  margin: auto;
+}
