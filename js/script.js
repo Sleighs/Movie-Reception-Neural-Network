@@ -9,21 +9,20 @@ var scoreVal = [.90,.90,.77];
 const { Layer, Network } = window.synaptic;
 
 let inputLayer = new Layer(3);
-let imdbLayer = new Layer(10);
-//let hiddenLayer = new Layer(10);
+let hiddenLayer = new Layer(10);
 let outputLayer = new Layer(1);
 
-inputLayer.project(imdbLayer);
-imdbLayer.project(outputLayer);
+inputLayer.project(hiddenLayer);
+hiddenLayer.project(outputLayer);
 
 let chromaNetwork = new Network({
 	input: inputLayer,
-	hidden: [imdbLayer],
+	hidden: [hiddenLayer],
 	output: outputLayer
 });
 
 // Train ChromaNetwork
-var learningRate = .3;
+var learningRate = .1;
 for (var i = 0; i < 10000; i++) {
   for (let trainingSet of trainingData) {
     chromaNetwork.activate(trainingSet[0]);
@@ -52,7 +51,7 @@ getAverages();
 
 function getAverages(){
   avgRt.innerHTML = Math.round(((scoreVal[0] * 100) + (scoreVal[1] * 100)) / 2);
-  avgAll.innerHTML = Math.round(((scoreVal[0] * 100) + (scoreVal[1] * 100) + ((scoreVal[2] * 100)) /*modify*/ - 5) / 3);  
+  avgAll.innerHTML = Math.round(((scoreVal[0] * 100) + (scoreVal[1] * 100) + ((scoreVal[2] * 100)) /*modify*/- 2.9) / 3);  
 }
 
 function adjustScore(input){
@@ -62,7 +61,7 @@ function adjustScore(input){
   var adjustedScore = Math.round(
 	(result[0] * 1000) + 
 	(((scoreVal[0] * 100) + (scoreVal[1] * 100) + (scoreVal[2] * 100)) 
-	/ 3) - 2.9);
+	/ 3) - 2.82 /* */);
   
   if (adjustedScore > 100) {
 	  adjustedScore = 100;
@@ -72,25 +71,25 @@ function adjustScore(input){
   document.getElementById('o-result').innerHTML = result;
   
   if (adjustedScore >= 90) {
-	rating = "critically acclaimed movie. likely great movie";
+	rating = "Critically acclaimed movie, likely a great movie";
   } else if (
     adjustedScore < 90 && adjustedScore >= 75
   ){
-    rating = "largely favorable reception";
+    rating = "Largely favorable reception";
   } else if (
     adjustedScore < 75 && adjustedScore >= 60
   ){
-    rating = "positive reception";
+    rating = "Positive reception";
   } else if (
     adjustedScore < 60 && adjustedScore >= 50
   ){
-	  rating = "average film. mixed reviews";
+	  rating = "Average film with mixed reviews";
   } else if (
     adjustedScore < 50 && adjustedScore >= 30
   ){
-    rating = "fair remarks";
+    rating = "Generally negative remarks were given.";
   } else if (adjustedScore < 30){
-	  rating = "largely negative reception";
+	  rating = "Largely negative reception";
   }
   
   ratingId.innerHTML = rating;
