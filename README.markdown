@@ -1,4 +1,6 @@
-# 'Good Movie' Neural Network 
- _A Pen created at CodePen.io. Original URL: [https://codepen.io/sleighs/pen/dByQMP](https://codepen.io/sleighs/pen/dByQMP).
+# Movie Reception Neural Network with Synaptic Js
+
+## This neural network receives a rotten tomatoes(rt) critic score, rt audience score and the imdb score of a movie and determines a more accurate score of the movie's general critical reception. 
+
 
  
