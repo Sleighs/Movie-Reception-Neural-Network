@@ -7,7 +7,8 @@ Currently, the algorithm currently adds the result to the average. Customize the
 
 Try at https://sleighs.github.io/Movie-Reception-Neural-Network/
 
-###Training Data
+### Training Data
+
 The current data received has the following traits: 
 - favors 
   - rt scores from 70-100
