@@ -10,11 +10,11 @@ Try at https://sleighs.github.io/Movie-Reception-Neural-Network/
 ### Training Data
 
 The current data received has the following traits: 
-- favors 
+- Favors 
   - rt scores from 70-100
   - rt audience scores over critic scores
   - imdb scores from 8-9.9
-- disfavors
+- Disfavors
   - rt scores below 60
   - imdb scores below 7
   - any movie with a 0 rating for any of the three scores
