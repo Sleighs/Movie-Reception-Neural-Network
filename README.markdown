@@ -1,9 +1,10 @@
 # Movie Reception Neural Network with Synaptic Js
 
 ### Summary
-Determine a movie's general critical reception based on the movie's Rotten Tomatoes(RT) critic score, RT audience score and imdb score.
+Determine a movie's general critical reception based on the movie's Rotten Tomatoes (RT) critic score, RT audience score and imdb score.
 
-Currently, the algorithm currently adds the result to the average . *Customize the adjusted score equation to tweak the adjusted score*.
+Currently, the algorithm currently adds the result to the average . 
+### *Customize the adjusted score equation to tweak the adjusted score*.
 
 Try at https://sleighs.github.io/Movie-Reception-Neural-Network/
 
