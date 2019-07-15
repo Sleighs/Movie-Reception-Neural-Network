@@ -4,12 +4,12 @@ Movie Reception
 This neural network checks a movie's rotten tomatoes and imdb scores and determines how positive the movie's reception is.
 */
 
-var scoreVal = [.90,.90,.77];
+var scoreVal = [.8,.9,.77];
 
 const { Layer, Network } = window.synaptic;
 
 let inputLayer = new Layer(3);
-let hiddenLayer = new Layer(10);
+let hiddenLayer = new Layer(4);
 let outputLayer = new Layer(1);
 
 inputLayer.project(hiddenLayer);
@@ -40,6 +40,8 @@ var imdbScoreDisplay = document.getElementById('imdb');
 var avgRt = document.getElementById('average-score-rt');
 var avgAll = document.getElementById('average-score-all');
 var ratingId = document.getElementById('rating');
+var avg;
+var avgR;
 
 criticScoreId.value = scoreVal[0] * 100;
 audienceScoreId.value = scoreVal[1] * 100;
@@ -50,22 +52,21 @@ imdbScoreDisplay.innerHTML = scoreVal[2] * 10;
 getAverages();
 
 function getAverages(){
-  avgRt.innerHTML = Math.round(((scoreVal[0] * 100) + (scoreVal[1] * 100)) / 2);
-  avgAll.innerHTML = Math.round(((scoreVal[0] * 100) + (scoreVal[1] * 100) + ((scoreVal[2] * 100)) /*modify*/- 2.9) / 3);  
+  avgR = Math.round(((scoreVal[0] + scoreVal[1]) / 2) * 100);
+  avg = Math.round(((scoreVal[0] + scoreVal[1] + scoreVal[2] + .02) / 3) * 100);  
+  avgRt.innerHTML = avgR;
+  avgAll.innerHTML = avg;
 }
 
 function adjustScore(input){
   let result = chromaNetwork.activate(input);
   let output = document.getElementById('output');
   var rating;
-  var adjustedScore = Math.round(
-	(result[0] * 1000) + 
-	(((scoreVal[0] * 100) + (scoreVal[1] * 100) + (scoreVal[2] * 100)) 
-	/ 3) - 2.82 /* */);
+  var adjustedScore = (result[0] * 1000000);
   
-  if (adjustedScore > 100) {
+  /*if (adjustedScore > 100) {
 	  adjustedScore = 100;
-  }
+  }*/
   
   output.innerHTML = adjustedScore;
   document.getElementById('o-result').innerHTML = result;
