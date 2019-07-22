@@ -62,7 +62,7 @@ function adjustScore(input){
   let result = chromaNetwork.activate(input);
   let output = document.getElementById('output');
   var rating;
-  var adjustedScore = (result[0] * 1000000);
+  var adjustedScore = (result[0] * 100) + avg;
   
   /*if (adjustedScore > 100) {
 	  adjustedScore = 100;
