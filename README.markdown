@@ -29,10 +29,10 @@ output: outputLayer
 });
 ```
 
-The network is then trained with the training data. **trainingSet[0]** hold possible input values and **trainingSet[1]** tells the machine how it should treat that set of values.
+The network is then trained with the training data. **trainingSet[0]** hold possible input values and **trainingSet[1]** tells the machine how it should treat that set of values. 
 ```javascript
 var learningRate = .1;
-for (var i = 0; i < 8000; i++) {
+for (var i = 0; i < 10000; i++) {
   for (let trainingSet of trainingData) {
     chromaNetwork.activate(trainingSet[0]);
     chromaNetwork.propagate(learningRate, trainingSet[1]);
@@ -40,7 +40,7 @@ for (var i = 0; i < 8000; i++) {
 }
 ```
 
-The network is now ready to run
+The network is now ready to run. When the page is loaded the network will learn at a .1 rate over 10000 iterations.
 
 In this application the network is used when ever the sliders are used for input. The **adjustScore** function receives the data for the network called **input** and returns a number in the **result** variable, displayed in the output table;
 ```javascript
