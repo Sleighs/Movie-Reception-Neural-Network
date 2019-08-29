@@ -5,7 +5,7 @@
 This neural network determine's an adjusted rating for box office movie critical reception based on the movie's Rotten Tomatoes (RT) critic score, RT audience score and Imdb score.
 
 ### How it works
-First a variable for the network is set. 
+First Synaptic is initialized.
 ```javascript
 const { Layer, Network } = window.synaptic;
 ```
