@@ -1,9 +1,17 @@
-# Movie Reception Neural Network with Synaptic Js
+# Neural Network with Synaptic Js
 
 ### Summary
-Determine a movie's general critical reception based on the movie's Rotten Tomatoes (RT) critic score, RT audience score and imdb score.
 
-Currently, the algorithm adds the result to the scores' average. 
+This neural network determine's an adjusted rating for box office movie critical reception based on the movie's Rotten Tomatoes (RT) critic score, RT audience score and Imdb score.
+
+
+First the network is set as
+
+> const { Layer, Network } = window.synaptic;
+
+Then the layers are defined. There is an input layer, 1 hidden layer and an output layer. 
+
+Currently, the  the equation t adds the result to the scores' average. 
 ### *Customize the adjusted score equation to tweak the algorithm*.
 
 Try at https://sleighs.github.io/Movie-Reception-Neural-Network/
