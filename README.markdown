@@ -51,7 +51,7 @@ In this application the network is used when ever the sliders are used for input
 Currently, the adjusted score equation in this demo adds the output to the total average of movie scores.
 
 
-Try at https://sleighs.github.io/SynapticJSNeuralNetwork/
+Try at https://codepen.io/sleighs/full/dByQMP
 
 ### Training Data
 
